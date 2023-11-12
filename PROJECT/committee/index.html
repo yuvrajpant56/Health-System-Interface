@@ -1,0 +1,45 @@
+<!-- admin/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- ... (head section) -->
+</head>
+<body>
+  <h1>committe login</h1>
+  <form id="admin-login-form">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const adminLoginForm = document.getElementById('admin-login-form');
+      adminLoginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const username = adminLoginForm.username.value;
+        const password = adminLoginForm.password.value;
+
+        // Here, you would perform the authentication logic (e.g., check against a database).
+        // If authentication is successful, redirect the user to the admin dashboard.
+        // If authentication fails, display an error message or return the user to the login page.
+
+        if (username === 'committee' && password === 'committee') {
+          // Redirect to the committee dashboard
+          window.location.href = 'committee-dashboard.html';
+        } else {
+          // Display an error message or handle login failure
+          alert('Invalid username or password. Please try again.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
